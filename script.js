@@ -31,11 +31,6 @@ console.log(appreciation(8)); // "À retravailler"
 function statutMajorite(age) {
 return age >= 18 ? "majeur" : "mineur";
 }
-console.log(statutMajorite(20)); // "majeur"
-const pays = ["Sénégal", "Mali", "Ghana", "Kenya"];
-for (const nom of pays) {
-console.log(`Pays africain : ${nom}`);
-}
 console.log(`Il y a ${pays.length} pays dans la liste.`);
 function fizzBuzzSenegal() {
     for (let n = 1; n <= 30; n++) {
@@ -60,3 +55,34 @@ function estPalindrome(mot) {
 }
 console.log(estPalindrome("kayak")); // true
 console.log(estPalindrome("Dakar")); // false
+const villes = ["Dakar", "Thiès", "Saint-Louis"];
+villes.forEach((ville) => {
+console.log(`Ville : ${ville}`);
+});
+const prixFcfa = [656, 1312, 3280]; // des prix en FCFA
+const prixEuro = prixFcfa.map((p) => p / 656);
+console.log(prixEuro); // [1, 2, 5]
+console.log(prixFcfa); // [656, 1312, 3280] -> l'original n'a pas changé !
+const notes = [12, 7, 15, 9, 18, 10];
+const admis = notes.filter((note) => note >= 10);
+console.log(admis); // [12, 15, 18, 10] -> seulement les notes >= 10
+const etudiant = {
+nom: "Fatou",
+age: 20,
+ville: "Dakar"
+};
+console.log(etudiant.nom); // "Fatou" -> accès par le point
+console.log(etudiant.age); // 20
+console.log(etudiant["ville"]); // "Dakar" -> autre écriture, avec crochets
+const etudiants = [
+{ nom: "Fatou", note: 12 },
+{ nom: "Moussa", note: 8 },
+{ nom: "Awa", note: 15 }
+];
+// Parcourir et afficher chaque étudiant
+etudiants.forEach((e) => {
+console.log(`${e.nom} a eu ${e.note}/20`);
+});
+console.table(pays)
+console.log(choisirAuHasard(pays))
+
